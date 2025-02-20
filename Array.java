@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Array {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -15,6 +14,10 @@ public class Array {
             "Keselematan dan Kesehatan Kerja"
         };
         
+        System.out.println("==============================");
+        System.out.println("Program Menghitung IP Semester");
+        System.out.println("==============================");
+        
         double[] nilaiAngka = new double[mataKuliah.length];
         double[] bobotNilai = new double[mataKuliah.length];
         
@@ -27,7 +30,7 @@ public class Array {
         System.out.println("=============================");
         System.out.println("Hasil konversi Nilai");
         System.out.println("=============================");
-        System.out.printf("%-50s %-15s %-15s %-15s%n", "Mk", "Nilai angka", "Nilai huruf", "Bobot nilai");
+        System.out.print("Mk, Nilai angka, Nilai huruf, Bobot nilai");
         
         for (int i = 0; i < mataKuliah.length; i++) {
             System.out.printf("%-50s %-15.2f %-15s %-15.2f%n", 
@@ -55,7 +58,6 @@ public class Array {
         else return "E";
     }
     
-    // Fungsi untuk mengonversi nilai angka ke bobot
     public static double konversiNilaiKeBobot(double nilai) {
         if (nilai >= 85) return 4.0;
         else if (nilai >= 80) return 3.7;
@@ -67,12 +69,7 @@ public class Array {
         else if (nilai >= 50) return 1.0;
         else return 0.0;
     }
-    
-    double ip = hitungIP(bobotNilai);
-        System.out.println("=============================");
-        System.out.printf("IP: %.2f%n", ip);
-        
-    // Fungsi untuk menghitung IP
+
     public static double hitungIP(double[] bobotNilai) {
         double totalBobot = 0;
         for (double bobot : bobotNilai) {
